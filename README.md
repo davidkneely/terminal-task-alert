@@ -2,6 +2,12 @@
 
 Play a sound automatically when a terminal command takes longer than 10 seconds to complete.
 
+## Demo Video
+
+[![Watch the demo](https://img.youtube.com/vi/LWxdBzNRso8/maxresdefault.jpg)](https://youtu.be/LWxdBzNRso8?si=BmWGppeRlFOPEIA9)
+
+Click the image above to watch the demo on YouTube.
+
 ## Installation
 
 ### Add to `.zshrc`
