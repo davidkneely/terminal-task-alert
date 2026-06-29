@@ -1,0 +1,21 @@
+#plays sound after completing a task
+
+timer_start() {
+    CMD_START=$(date +%s)
+}
+
+timer_end() {
+    [[ -z "$CMD_START" ]] && return
+
+    local duration=$(( $(date +%s) - CMD_START ))
+    unset CMD_START
+
+    if (( duration > 10 )); then
+        (setopt local_options no_monitor; \
+            ~/code/bash/play_mp3.sh ~/code/bash/mario.mp3 >/dev/null 2>&1 &)
+    fi
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec timer_start
+add-zsh-hook precmd timer_end
